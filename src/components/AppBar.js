@@ -2,8 +2,8 @@ import React from "react"
 import { Grid, Cell, ALIGNMENT, BEHAVIOR } from 'baseui/layout-grid';
 import AppBarMobile from "./AppBar/AppBarMobile";
 import AppBarTablet from "./AppBar/AppBarTablet";
-
-export default function AppBar() {
+import {withRouter} from "react-router-dom"
+function AppBar() {
 
     return (
         <div>
@@ -22,3 +22,5 @@ export default function AppBar() {
     );
 
 }
+
+export default withRouter(AppBar)

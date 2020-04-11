@@ -8,9 +8,9 @@ import {
 import { StyledLink as Link } from 'baseui/link';
 import { Button } from 'baseui/button';
 import { Select } from "baseui/select";
-import {menuItems} from "./MenuItems"
-
-export default function AppBarMobile() {
+import { menuItems } from "./MenuItems"
+import { withRouter } from "react-router-dom";
+function AppBarMobile() {
     const [value, setValue] = React.useState([]);
 
     return (<HeaderNavigation>
@@ -19,13 +19,15 @@ export default function AppBarMobile() {
         </NavigationList>
         <NavigationList $align={ALIGN.center} />
         <Select
-                options={menuItems}
-                value={value}
-                placeholder="Menu"
-                onChange={params => setValue(params.value)}
-                
-            />
+            options={menuItems}
+            value={value}
+            placeholder="Menu"
+            onChange={params => setValue(params.value)}
+
+        />
 
     </HeaderNavigation>
     )
 }
+
+export default withRouter(AppBarMobile)

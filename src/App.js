@@ -6,6 +6,16 @@ import { Client as Styletron } from 'styletron-engine-atomic';
 import { Provider as StyletronProvider } from 'styletron-react';
 import { LightTheme, DarkTheme, BaseProvider, styled } from 'baseui';
 import AppBar from './components/AppBar';
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link
+} from "react-router-dom";
+import HomePage from './pages/home/Home';
+import ContactPage from './pages/contact/Contact';
+import AboutPage from './pages/about/About';
+
 
 const engine = new Styletron();
 
@@ -14,7 +24,21 @@ function App() {
     return (
         <StyletronProvider value={engine}>
             <BaseProvider theme={LightTheme}>
-                {AppBar()}
+                
+                <Router>
+                    <AppBar/>
+                    <Switch>
+                        <Route path="/about">
+                            <AboutPage />
+                        </Route>
+                        <Route path="/contact">
+                            <ContactPage />
+                        </Route>
+                        <Route path="/">
+                            <HomePage />
+                        </Route>
+                    </Switch>
+                </Router>
                 {/* <Button onClick={() => {
                 if (theme == 1) {
                     changeTheme(0)

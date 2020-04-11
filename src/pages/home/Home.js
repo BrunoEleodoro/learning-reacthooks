@@ -6,12 +6,12 @@ import { StatefulInput } from 'baseui/input';
 import { Button } from "baseui/button";
 
 
-export default function Home() {
+export default function HomePage() {
     
     return (
         <div>
             
-            
+          Home  
             
         </div>
 

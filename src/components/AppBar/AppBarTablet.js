@@ -9,8 +9,17 @@ import { StyledLink } from "baseui/link";
 import { Button } from 'baseui/button';
 import { Select } from "baseui/select";
 import { menuItems } from "./MenuItems";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+  useRouteMatch,
+  useParams,
+  withRouter
+} from "react-router-dom";
 
-export default function AppBarTablet() {
+function AppBarTablet() {
     const [value, setValue] = React.useState([]);
 
     return (<HeaderNavigation>
@@ -21,13 +30,15 @@ export default function AppBarTablet() {
         <StyledNavigationList $align={ALIGN.right}>
             {menuItems.map((item) => {
                 return <StyledNavigationItem>
-                    <StyledLink href={item.id}>
+                    <Link to={item.id}>
                         {item.label}
-                    </StyledLink>
+                    </Link>
                 </StyledNavigationItem>
-            })}
+            })}        
         </StyledNavigationList>
 
     </HeaderNavigation>
     )
 }
+
+export default withRouter(AppBarTablet)
