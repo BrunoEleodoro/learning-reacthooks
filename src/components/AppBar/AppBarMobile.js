@@ -8,6 +8,7 @@ import {
 import { StyledLink as Link } from 'baseui/link';
 import { Button } from 'baseui/button';
 import { Select } from "baseui/select";
+import {menuItems} from "./MenuItems"
 
 export default function AppBarMobile() {
     const [value, setValue] = React.useState([]);
@@ -18,11 +19,7 @@ export default function AppBarMobile() {
         </NavigationList>
         <NavigationList $align={ALIGN.center} />
         <Select
-                options={[
-                    { label: "Home", id: "/home" },
-                    { label: "About", id: "/about" },
-                    { label: "Contact Us", id: "/contact" },
-                ]}
+                options={menuItems}
                 value={value}
                 placeholder="Menu"
                 onChange={params => setValue(params.value)}

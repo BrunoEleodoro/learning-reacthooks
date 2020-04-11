@@ -1,6 +1,7 @@
 import React from "react"
 import { Grid, Cell, ALIGNMENT, BEHAVIOR } from 'baseui/layout-grid';
 import AppBarMobile from "./AppBar/AppBarMobile";
+import AppBarTablet from "./AppBar/AppBarTablet";
 
 export default function AppBar() {
 
@@ -11,10 +12,10 @@ export default function AppBar() {
                     <AppBarMobile/>
                 </Cell>
                 <Cell span={[0, 12, 0]}>
-                    AppBar Tablet
+                    <AppBarTablet/>
                 </Cell>
                 <Cell span={[0, 0, 12]}>
-                    AppBar Large
+                    <AppBarTablet/>
                 </Cell>
             </Grid>
         </div>
