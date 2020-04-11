@@ -10,13 +10,13 @@ import { Button } from 'baseui/button';
 import { Select } from "baseui/select";
 import { menuItems } from "./MenuItems";
 import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link,
-  useRouteMatch,
-  useParams,
-  withRouter
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link,
+    useRouteMatch,
+    useParams,
+    withRouter
 } from "react-router-dom";
 
 function AppBarTablet() {
@@ -24,17 +24,20 @@ function AppBarTablet() {
 
     return (<HeaderNavigation>
         <StyledNavigationList $align={ALIGN.left}>
-            <StyledNavigationItem>MyApp</StyledNavigationItem>
+            <StyledNavigationItem>Fatec Pocket</StyledNavigationItem>
         </StyledNavigationList>
         <StyledNavigationList $align={ALIGN.center} />
         <StyledNavigationList $align={ALIGN.right}>
             {menuItems.map((item) => {
-                return <StyledNavigationItem>
+                return <StyledNavigationItem key={item.id}>
                     <Link to={item.id}>
-                        {item.label}
+                        <StyledLink href="#">
+                            {item.label}
+                        </StyledLink>
                     </Link>
+
                 </StyledNavigationItem>
-            })}        
+            })}
         </StyledNavigationList>
 
     </HeaderNavigation>

@@ -15,7 +15,7 @@ function AppBarMobile() {
 
     return (<HeaderNavigation>
         <NavigationList $align={ALIGN.left}>
-            <NavigationItem>MyApp</NavigationItem>
+            <NavigationItem>Fatec Pocket</NavigationItem>
         </NavigationList>
         <NavigationList $align={ALIGN.center} />
         <Select

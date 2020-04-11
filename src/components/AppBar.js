@@ -7,8 +7,8 @@ function AppBar() {
 
     return (
         <div>
-            <Grid behavior={BEHAVIOR.fluid}>
-                <Cell span={[12, 0, 0]}>
+            <Grid >
+                <Cell span={[12, 0, 0]} >
                     <AppBarMobile/>
                 </Cell>
                 <Cell span={[0, 12, 0]}>
