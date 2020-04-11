@@ -16,6 +16,8 @@ export default function HomePage() {
                     <H1>Fatec Pocket</H1>
 
                     <H6>Aplicativo para estudantes da Fatec, venha conhecer</H6>
+
+                    <Button onClick={() => alert("click")}>Baixar</Button>
                 </Cell>
                 <Cell span={[12, 1, 3]}></Cell>
                 <Cell span={[12, 3, 3]} align={ALIGNMENT.start} >
