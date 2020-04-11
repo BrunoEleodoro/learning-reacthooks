@@ -2,31 +2,28 @@ import React, { useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import Home from "./pages/home/Home"
+import { Client as Styletron } from 'styletron-engine-atomic';
+import { Provider as StyletronProvider } from 'styletron-react';
+import { LightTheme, DarkTheme, BaseProvider, styled } from 'baseui';
+import AppBar from './components/AppBar';
+
+const engine = new Styletron();
 
 function App() {
-    // const [nome, setNome] = useState('bruno');
 
     return (
-        // <div className="App">
-        //     <header className="App-header">
-        //         <img src={logo} className="App-logo" alt="logo" />
-        //         <p>
-        //             {nome}
-        //         </p>
-        //         <a
-        //             className="App-link"
-        //             href="https://reactjs.org"
-        //             target="_blank"
-        //             rel="noopener noreferrer"
-        //         >
-        //             Learn React
-        // </a>
-        //         <button onClick={() =>setNome('Carlos')} >Clique</button>
-        //     </header>
-        // </div>
-        <div>
-            {Home()}
-        </div>
+        <StyletronProvider value={engine}>
+            <BaseProvider theme={LightTheme}>
+                {AppBar()}
+                {/* <Button onClick={() => {
+                if (theme == 1) {
+                    changeTheme(0)
+                } else {
+                    changeTheme(1)
+                }
+            }}>Change</Button> */}
+            </BaseProvider>
+        </StyletronProvider>
     );
 }
 
