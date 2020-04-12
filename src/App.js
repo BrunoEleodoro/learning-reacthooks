@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import Home from "./pages/home/Home"
@@ -20,13 +20,14 @@ import AboutPage from './pages/about/About';
 const engine = new Styletron();
 
 function App() {
-
+    useEffect(() => {
+        document.body.style.backgroundColor='#000'    });
     return (
         <StyletronProvider value={engine}>
-            <BaseProvider theme={LightTheme}>
+            <BaseProvider theme={DarkTheme}>
                 
                 <Router>
-                    <AppBar/>
+                    {/* <AppBar/> */}
                     <Switch>
                         <Route path="/about">
                             <AboutPage />
